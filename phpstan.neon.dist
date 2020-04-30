@@ -13,4 +13,11 @@ parameters:
     exceptionRules:
         uncheckedExceptions:
             - LogicException
+            - Nette\Application\AbortException
+            - Nette\Application\UI\InvalidLinkException
             - Nette\InvalidStateException
+
+    ignoreErrors:
+        -
+            path: src/AutocompleteInput/AutocompleteInput.php
+            message: '~PHPDoc tag @throws with type Nette\\Application\\UI\\BadSignalException is not compatible with parent~'
