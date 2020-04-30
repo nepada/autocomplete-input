@@ -1,0 +1,5 @@
+extensions:
+    - Nepada\Bridges\AutocompleteInputDI\AutocompleteInputExtension
+
+di:
+    debugger: false
