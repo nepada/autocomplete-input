@@ -16,7 +16,9 @@ class AutocompleteInput extends TextInput implements ISignalReceiver
     private const QUERY_PLACEHOLDER = '__QUERY_PLACEHOLDER__';
     private const QUERY_PARAMATER = 'query';
 
-    /** @var callable */
+    /**
+     * @var callable
+     */
     private $dataSource;
 
     /**
