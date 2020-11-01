@@ -1,7 +1,7 @@
 Autocomplete text input
 =======================
 
-[![Build Status](https://travis-ci.org/nepada/autocomplete-input.svg?branch=master)](https://travis-ci.org/nepada/autocomplete-input)
+[![Build Status](https://github.com/nepada/autocomplete-input/workflows/CI/badge.svg)](https://github.com/nepada/autocomplete-input/actions?query=workflow%3ACI+branch%3Amaster)
 [![Coverage Status](https://coveralls.io/repos/github/nepada/autocomplete-input/badge.svg?branch=master)](https://coveralls.io/github/nepada/autocomplete-input?branch=master)
 [![Downloads this Month](https://img.shields.io/packagist/dm/nepada/autocomplete-input.svg)](https://packagist.org/packages/nepada/autocomplete-input)
 [![Latest stable](https://img.shields.io/packagist/v/nepada/autocomplete-input.svg)](https://packagist.org/packages/nepada/autocomplete-input)
