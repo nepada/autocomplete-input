@@ -16,9 +16,12 @@
     ],
     "require": {
         "php": ">=7.4.0",
-        "nette/application": "^3.0.2@dev",
-        "nette/forms": "^3.0@dev",
-        "nette/utils": "^3.1.3@dev"
+        "nette/application": "^3.1.4@dev",
+        "nette/forms": "^3.1.4@dev",
+        "nette/utils": "^3.2.5@dev"
+    },
+    "conflict": {
+        "nette/component-model": "<3.0.2"
     },
     "require-dev": {
         "nette/tester": "2.4.1",
@@ -33,8 +36,8 @@
         "php-parallel-lint/php-parallel-lint": "1.3.1",
         "nepada/coding-standard": "7.4.0",
         "nette/bootstrap": "^3.0@dev",
-        "nette/di": "^3.0.5@dev",
-        "nette/schema": "^1.0@dev"
+        "nette/di": "^3.0.9@dev",
+        "nette/schema": "^1.2@dev"
     },
     "autoload": {
         "psr-4": {
