@@ -17,7 +17,7 @@ parameters:
         - php
         - phpt
 
-    excludes_analyse:
+    excludePaths:
         - tests/temp/*
 
     ignoreErrors:
