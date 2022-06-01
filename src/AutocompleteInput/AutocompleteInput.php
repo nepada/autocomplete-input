@@ -4,12 +4,12 @@ declare(strict_types = 1);
 namespace Nepada\AutocompleteInput;
 
 use Nette\Application\UI\BadSignalException;
-use Nette\Application\UI\ISignalReceiver;
 use Nette\Application\UI\Presenter;
+use Nette\Application\UI\SignalReceiver;
 use Nette\Forms\Controls\TextInput;
 use Nette\Utils\Html;
 
-class AutocompleteInput extends TextInput implements ISignalReceiver
+class AutocompleteInput extends TextInput implements SignalReceiver
 {
 
     private const AUTOCOMPLETE_SIGNAL = 'autocomplete';

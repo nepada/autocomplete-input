@@ -11,7 +11,7 @@ use Nette\Application\UI\Form;
 final class TestPresenter extends Nette\Application\UI\Presenter
 {
 
-    public ?Nette\Application\IResponse $response = null;
+    public ?Nette\Application\Response $response = null;
 
     public static function create(?Nette\Http\IRequest $httpRequest = null): TestPresenter
     {
@@ -42,7 +42,7 @@ final class TestPresenter extends Nette\Application\UI\Presenter
         $this->terminate();
     }
 
-    public function sendResponse(Nette\Application\IResponse $response): void
+    public function sendResponse(Nette\Application\Response $response): void
     {
         $this->response ??= $response;
         parent::sendResponse($response);
