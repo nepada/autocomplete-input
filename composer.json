@@ -34,8 +34,9 @@
         "nepada/coding-standard": "7.5.2",
         "nette/di": "^3.0.6@dev",
         "nette/schema": "^1.0.3@dev",
-        "nette/bootstrap": ">=3.0@dev",
-        "nette/component-model": ">=3.0.2"
+        "nette/bootstrap": ">=3.1@dev",
+        "nette/component-model": ">=3.0.2",
+        "nette/http": ">=3.1.0@dev"
     },
     "autoload": {
         "psr-4": {
