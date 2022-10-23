@@ -58,4 +58,11 @@ final class TestPresenter extends Nette\Application\UI\Presenter
         return new Nette\Http\Response();
     }
 
+    public function getAutocompleteInput(): AutocompleteInput
+    {
+        $input = $this['form']['foo'];
+        assert($input instanceof AutocompleteInput);
+        return $input;
+    }
+
 }

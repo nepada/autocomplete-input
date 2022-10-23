@@ -3,7 +3,6 @@ declare(strict_types = 1);
 
 namespace NepadaTests\AutocompleteInput;
 
-use Nepada;
 use NepadaTests\AutocompleteInput\Fixtures\TestPresenter;
 use NepadaTests\TestCase;
 use Nette\Application;
@@ -25,9 +24,7 @@ class AutocompleteInputTest extends TestCase
 
     public function testRendering(): void
     {
-        $presenter = TestPresenter::create();
-        /** @var Nepada\AutocompleteInput\AutocompleteInput $autocompleteInput */
-        $autocompleteInput = $presenter['form']['foo'];
+        $autocompleteInput = TestPresenter::create()->getAutocompleteInput();
 
         $autocompleteInput->setDefaultValue('bar');
 
@@ -39,9 +36,7 @@ class AutocompleteInputTest extends TestCase
 
     public function testMinLengthSetting(): void
     {
-        $presenter = TestPresenter::create();
-        /** @var Nepada\AutocompleteInput\AutocompleteInput $autocompleteInput */
-        $autocompleteInput = $presenter['form']['foo'];
+        $autocompleteInput = TestPresenter::create()->getAutocompleteInput();
 
         $autocompleteInput->setAutocompleteMinLength(42);
 
@@ -55,9 +50,9 @@ class AutocompleteInputTest extends TestCase
     {
         $presenter = $this->runTestPresenter(str_replace('__QUERY_PLACEHOLDER__', 'someQuery', self::AUTOCOMPLETE_URL));
 
+        Assert::type(Application\Responses\JsonResponse::class, $presenter->response);
         /** @var Application\Responses\JsonResponse $response */
         $response = $presenter->response;
-        Assert::type(Application\Responses\JsonResponse::class, $response);
         Assert::same(['Query: someQuery', 'Lorem ipsum'], $response->getPayload());
     }
 
@@ -81,9 +76,9 @@ class AutocompleteInputTest extends TestCase
         );
     }
 
-    private function runTestPresenter(string $url): TestPresenter
+    private function runTestPresenter(string $urlString): TestPresenter
     {
-        $url = new UrlScript($url);
+        $url = new UrlScript($urlString);
         $httpRequest = new Request($url);
         $presenter = TestPresenter::create($httpRequest);
 
