@@ -13,7 +13,7 @@ final class TestPresenter extends Nette\Application\UI\Presenter
 
     public ?Nette\Application\Response $response = null;
 
-    public static function create(?Nette\Http\IRequest $httpRequest = null): TestPresenter
+    public static function create(?Nette\Http\IRequest $httpRequest = null): self
     {
         $presenter = new self();
         $presenter->autoCanonicalize = false;
