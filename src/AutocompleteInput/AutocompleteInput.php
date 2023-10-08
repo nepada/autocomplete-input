@@ -14,7 +14,7 @@ class AutocompleteInput extends TextInput implements SignalReceiver
 
     private const AUTOCOMPLETE_SIGNAL = 'autocomplete';
     private const QUERY_PLACEHOLDER = '__QUERY_PLACEHOLDER__';
-    private const QUERY_PARAMATER = 'query';
+    private const QUERY_PARAMETER = 'query';
 
     /**
      * @var callable
@@ -32,7 +32,7 @@ class AutocompleteInput extends TextInput implements SignalReceiver
                 $uidPrefix = $this->getUniqueId() . self::NAME_SEPARATOR;
                 $arguments = [
                     Presenter::SIGNAL_KEY => $uidPrefix . self::AUTOCOMPLETE_SIGNAL,
-                    $uidPrefix . self::QUERY_PARAMATER => self::QUERY_PLACEHOLDER,
+                    $uidPrefix . self::QUERY_PARAMETER => self::QUERY_PLACEHOLDER,
                 ];
                 $autocompleteUrl = $presenter->link('this', $arguments);
                 $this->setHtmlAttribute('data-autocomplete-url', $autocompleteUrl);
@@ -57,7 +57,7 @@ class AutocompleteInput extends TextInput implements SignalReceiver
 
         $presenter = $this->getPresenter();
 
-        $query = $presenter->popGlobalParameters($this->getUniqueId())[self::QUERY_PARAMATER] ?? null;
+        $query = $presenter->popGlobalParameters($this->getUniqueId())[self::QUERY_PARAMETER] ?? null;
         if ($query === null) {
             $class = static::class;
             throw new BadSignalException("Missing query parameter for '$signal' in $class.");
