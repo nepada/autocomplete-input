@@ -21,12 +21,7 @@ class AutocompleteInput extends TextInput implements SignalReceiver
      */
     private $dataSource;
 
-    /**
-     * @param Html|string|null $label
-     * @param callable $dataSource
-     * @param int|null $maxLength
-     */
-    public function __construct($label, callable $dataSource, ?int $maxLength = null)
+    public function __construct(Html|string|null $label, callable $dataSource, ?int $maxLength = null)
     {
         parent::__construct($label, $maxLength);
         $this->dataSource = $dataSource;
@@ -51,7 +46,6 @@ class AutocompleteInput extends TextInput implements SignalReceiver
     }
 
     /**
-     * @param string $signal
      * @throws BadSignalException
      */
     public function signalReceived(string $signal): void
