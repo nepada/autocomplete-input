@@ -20,7 +20,7 @@ require_once __DIR__ . '/../bootstrap.php';
 class AutocompleteInputTest extends TestCase
 {
 
-    private const AUTOCOMPLETE_URL = '/?do=form-foo-autocomplete&form-foo-query=__QUERY_PLACEHOLDER__&action=default&presenter=Test';
+    private const AUTOCOMPLETE_URL = '/?form-foo-query=__QUERY_PLACEHOLDER__&action=default&do=form-foo-autocomplete&presenter=Test';
 
     public function testRendering(): void
     {

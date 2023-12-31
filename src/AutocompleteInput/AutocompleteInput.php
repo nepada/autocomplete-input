@@ -30,11 +30,9 @@ class AutocompleteInput extends TextInput implements SignalReceiver
             Presenter::class,
             function (Presenter $presenter): void {
                 $uidPrefix = $this->getUniqueId() . self::NAME_SEPARATOR;
-                $arguments = [
-                    Presenter::SIGNAL_KEY => $uidPrefix . self::AUTOCOMPLETE_SIGNAL,
-                    $uidPrefix . self::QUERY_PARAMETER => self::QUERY_PLACEHOLDER,
-                ];
-                $autocompleteUrl = $presenter->link('this', $arguments);
+                $signal = $uidPrefix . self::AUTOCOMPLETE_SIGNAL . '!';
+                $arguments = [$uidPrefix . self::QUERY_PARAMETER => self::QUERY_PLACEHOLDER];
+                $autocompleteUrl = $presenter->link($signal, $arguments);
                 $this->setHtmlAttribute('data-autocomplete-url', $autocompleteUrl);
             },
         );
