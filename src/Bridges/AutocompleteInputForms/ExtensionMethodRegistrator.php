@@ -6,6 +6,7 @@ namespace Nepada\Bridges\AutocompleteInputForms;
 use Nepada\AutocompleteInput\AutocompleteInput;
 use Nette;
 use Nette\Forms\Container;
+use Nette\Utils\Html;
 
 class ExtensionMethodRegistrator
 {
@@ -16,9 +17,9 @@ class ExtensionMethodRegistrator
     {
         Container::extensionMethod(
             'addAutocomplete',
-            function (Container $container, $name, $label, callable $dataSource, ?int $maxLength = null): AutocompleteInput {
+            function (Container $container, string|int $name, string|Html|null $label, callable $dataSource, ?int $maxLength = null): AutocompleteInput {
                 $input = new AutocompleteInput($label, $dataSource, $maxLength);
-                $container[$name] = $input;
+                $container[(string) $name] = $input;
 
                 return $input;
             },
