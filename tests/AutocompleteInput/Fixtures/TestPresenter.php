@@ -18,10 +18,18 @@ final class TestPresenter extends Nette\Application\UI\Presenter
         $presenter = new self();
         $presenter->autoCanonicalize = false;
 
-        $httpRequest ??= $presenter->createHttpRequest();
-        $httpResponse = $presenter->createHttpResponse();
-        $router = new SimpleRouter();
-        $presenter->injectPrimary(null, null, $router, $httpRequest, $httpResponse);
+        $primaryDependencies = [];
+        $rc = new \ReflectionMethod($presenter, 'injectPrimary');
+        foreach ($rc->getParameters() as $parameter) {
+            if ($parameter->isDefaultValueAvailable()) {
+                continue;
+            }
+            $primaryDependencies[$parameter->getName()] = null;
+        }
+        $primaryDependencies['httpRequest'] = $httpRequest ?? $presenter->createHttpRequest();
+        $primaryDependencies['httpResponse'] = $presenter->createHttpResponse();
+        $primaryDependencies['router'] = new SimpleRouter();
+        $presenter->injectPrimary(...$primaryDependencies);
 
         $presenter->setParent(null, 'Test');
         $presenter->changeAction('default');

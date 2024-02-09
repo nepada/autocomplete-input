@@ -29,3 +29,7 @@ parameters:
         -
             message: '#Call to an undefined method Nette\\Forms\\Form::addAutocomplete\(\)#'
             path: tests/Bridges/AutocompleteInputDI/AutocompleteInputExtensionTest.phpt
+        - # nette/application 3.1 compatibility
+            message: "#^Parameter .* of method Nette\\\\Application\\\\UI\\\\Presenter\\:\\:injectPrimary\\(\\) expects .*, .* given\\.$#"
+            count: 1
+            path: tests/AutocompleteInput/Fixtures/TestPresenter.php
