@@ -74,7 +74,7 @@ class AutocompleteInput extends TextInput implements SignalReceiver
 
     private function getUniqueId(): string
     {
-        return (string) $this->lookupPath(Presenter::class, true);
+        return $this->lookupPath(Presenter::class, true);
     }
 
 }

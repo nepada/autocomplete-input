@@ -18,6 +18,7 @@ updates:
       - dependency-name: "nette/bootstrap"
       - dependency-name: "nette/component-model"
       - dependency-name: "nette/http"
+      - dependency-name: "composer-runtime-api"
     groups:
         phpstan:
             patterns: ["*phpstan*"]
