@@ -29,6 +29,7 @@ final class TestPresenter extends Nette\Application\UI\Presenter
         $primaryDependencies['httpRequest'] = $httpRequest ?? $presenter->createHttpRequest();
         $primaryDependencies['httpResponse'] = $presenter->createHttpResponse();
         $primaryDependencies['router'] = new SimpleRouter();
+        $primaryDependencies['presenterFactory'] = new Nette\Application\PresenterFactory();
         $presenter->injectPrimary(...$primaryDependencies);
 
         $presenter->setParent(null, 'Test');
