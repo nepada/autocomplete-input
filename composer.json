@@ -38,7 +38,7 @@
         "nette/component-model": ">=3.0.2",
         "nette/http": ">=3.1.0@dev",
         "composer-runtime-api": "^2.0",
-        "composer/semver": "3.4.0"
+        "composer/semver": "3.4.2"
     },
     "autoload": {
         "psr-4": {
