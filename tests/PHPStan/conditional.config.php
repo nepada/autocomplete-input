@@ -6,7 +6,7 @@ use Composer\Semver\VersionParser;
 
 $config = [];
 
-if (InstalledVersions::satisfies(new VersionParser(), 'nette/application', '<3.2')) {
+if (InstalledVersions::satisfies(new VersionParser(), 'nette/component-model', '<3.1')) {
     $config['parameters']['ignoreErrors'][] = [
         'message' => '#^Method Nepada\\\\AutocompleteInput\\\\AutocompleteInput\\:\\:getUniqueId\\(\\) should return string but returns string\\|null\\.$#',
         'path' => '../../src/AutocompleteInput/AutocompleteInput.php',
