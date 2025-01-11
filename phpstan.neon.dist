@@ -26,3 +26,10 @@ parameters:
             - Nette\Application\AbortException
             - Nette\Application\UI\InvalidLinkException
             - Nette\InvalidStateException
+
+    ignoreErrors:
+        - # covered by tests
+            message: '#^Trait Nepada\\Bridges\\AutocompleteInputForms\\AutocompleteInputMixin is used zero times and is not analysed\.$#'
+            identifier: trait.unused
+            count: 1
+            path: src/Bridges/AutocompleteInputForms/AutocompleteInputMixin.php
