@@ -19,7 +19,7 @@ class AutocompleteInputMixinTest extends TestCase
     public function testMixin(): void
     {
         $form = new TestForm();
-        $input = $form->addAutocomplete('test', 'Autocomplete', fn (string $query): array => []);
+        $input = $form->addAutocomplete('test', 'Autocomplete', fn (): array => []);
         Assert::type(AutocompleteInput::class, $input);
         Assert::same('Autocomplete', $input->caption);
         Assert::same($input, $form['test']);

@@ -32,7 +32,7 @@ class AutocompleteInputExtensionTest extends TestCase
     {
         $form = new Form();
         /** @var AutocompleteInput $input */
-        $input = $form->addAutocomplete('test', 'Autocomplete', fn (string $query): array => []);
+        $input = $form->addAutocomplete('test', 'Autocomplete', fn (): array => []);
         Assert::type(AutocompleteInput::class, $input);
         Assert::same('Autocomplete', $input->caption);
         Assert::same($input, $form['test']);
