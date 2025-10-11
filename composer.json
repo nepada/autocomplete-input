@@ -21,7 +21,7 @@
         "nette/utils": "^3.2@dev || ^4.0@dev"
     },
     "require-dev": {
-        "nette/tester": "2.5.6",
+        "nette/tester": "2.5.7",
         "mockery/mockery": "1.6.12",
         "phpstan/phpstan": "2.1.31",
         "phpstan/phpstan-strict-rules": "2.0.7",
@@ -35,12 +35,13 @@
         "nette/di": "^3.0.6@dev",
         "nette/schema": "^1.0.3@dev",
         "nette/bootstrap": ">=3.1@dev",
-        "nette/component-model": ">=3.0.2",
         "composer-runtime-api": "^2.0",
         "composer/semver": "3.4.4",
-        "nette/neon": ">=3.3.4@dev",
-        "nette/http": "*@dev",
-        "nette/robot-loader": "*@dev"
+        "nette/component-model": ">=3.0.2",
+        "nette/neon": ">=3.3.4"
+    },
+    "conflict": {
+        "nette/component-model": "3.1.2"
     },
     "autoload": {
         "psr-4": {
