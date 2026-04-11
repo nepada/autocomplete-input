@@ -81,8 +81,10 @@ class AutocompleteInputTest extends TestCase
         $url = new UrlScript($urlString);
         $httpRequest = new Request($url);
         $presenter = TestPresenter::create($httpRequest);
+        /** @var array<string, mixed> $parameters */
+        $parameters = $url->getQueryParameters();
 
-        $request = new Application\Request('Test', IRequest::GET, $url->getQueryParameters());
+        $request = new Application\Request('Test', IRequest::GET, $parameters);
         try {
             $presenter->run($request);
         } catch (Application\AbortException $exception) {
