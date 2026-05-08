@@ -67,9 +67,7 @@ class AutocompleteInput extends TextInput implements SignalReceiver
 
     private function getPresenter(): Presenter
     {
-        $presenter = $this->lookup(Presenter::class, true);
-        assert($presenter instanceof Presenter);
-        return $presenter;
+        return $this->lookup(Presenter::class, true);
     }
 
     private function getUniqueId(): string
