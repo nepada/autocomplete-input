@@ -29,7 +29,7 @@ class AutocompleteInput extends TextInput implements SignalReceiver
         $this->monitor(
             Presenter::class,
             function (Presenter $presenter): void {
-                $uidPrefix = $this->getUniqueId() . self::NAME_SEPARATOR;
+                $uidPrefix = $this->getUniqueId() . @self::NAME_SEPARATOR; // Compatibility with nette/component-model <3.2
                 $signal = $uidPrefix . self::AUTOCOMPLETE_SIGNAL . '!';
                 $arguments = [$uidPrefix . self::QUERY_PARAMETER => self::QUERY_PLACEHOLDER];
                 $autocompleteUrl = $presenter->link($signal, $arguments);
