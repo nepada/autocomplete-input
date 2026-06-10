@@ -95,4 +95,4 @@ The backend form control is not tightly coupled to any specific client side impl
 -->
 ```
 
-If you do not want to roll out your own client side solution, try [@nepada/autocomplete-input](https://yarnpkg.com/package/@nepada/autocomplete-input) npm package.
+If you do not want to roll out your own client side solution, try [@nepada/autocomplete-input](https://www.npmjs.com/package/@nepada/autocomplete-input) npm package.
