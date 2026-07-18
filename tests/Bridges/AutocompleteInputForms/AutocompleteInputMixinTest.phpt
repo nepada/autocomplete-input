@@ -21,7 +21,7 @@ class AutocompleteInputMixinTest extends TestCase
         $form = new TestForm();
         $input = $form->addAutocomplete('test', 'Autocomplete', fn (): array => []);
         Assert::type(AutocompleteInput::class, $input);
-        Assert::same('Autocomplete', $input->caption);
+        Assert::same('Autocomplete', $input->getCaption());
         Assert::same($input, $form['test']);
     }
 
