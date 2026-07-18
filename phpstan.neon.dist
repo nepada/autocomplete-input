@@ -33,3 +33,10 @@ parameters:
             identifier: trait.unused
             count: 1
             path: src/Bridges/AutocompleteInputForms/AutocompleteInputMixin.php
+
+        - # compatibility with nette/component-model <3.2
+            message: '#^Access to undefined constant Nepada\\AutocompleteInput\\AutocompleteInput::(NAME_SEPARATOR|NameSeparator)\.$#'
+            identifier: classConstant.notFound
+            path: src/AutocompleteInput/AutocompleteInput.php
+            count: 1
+            reportUnmatched: false
